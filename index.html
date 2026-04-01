@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Strategy Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" data-lang="en">English</a></li>
+                <li><a href="#" data-lang="es">Español</a></li>
+                <li><a href="#" data-lang="pt">Português</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="market-selector">
+            <h2>Select Market</h2>
+            <select id="market">
+                <option value="ireland-uk">Ireland/UK</option>
+                <option value="spain">Spain</option>
+                <option value="latam">Latam</option>
+            </select>
+            <div id="pricing">Pricing will be displayed here.</div>
+        </section>
+        <section id="profiles">
+            <h2>Professional Profiles</h2>
+            <div id="profiles-content">Profiles will be listed here.</div>
+        </section>
+        <section id="services">
+            <h2>Our Services</h2>
+            <div id="services-content">Services will be listed here.</div>
+        </section>
+        <section id="courses">
+            <h2>Courses</h2>
+            <div id="courses-content">Courses will be listed here.</div>
+        </section>
+        <section id="visa-guide">
+            <h2>Visa Guide</h2>
+            <div id="visa-content">Information will be listed here.</div>
+        </section>
+        <section id="testimonials">
+            <h2>Testimonials</h2>
+            <div id="testimonials-content">Testimonials will be displayed here.</div>
+        </section>
+        <section id="faq">
+            <h2>FAQ</h2>
+            <div id="faq-content">FAQs will be displayed here.</div>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <button id="booking">Book a Consultation</button>
+    </footer>
+    <script>
+        // Smooth animations and responsive design scripts here
+        document.getElementById('market').addEventListener('change', function() {
+            // Pricing logic based on selected market
+        });
+        document.getElementById('booking').addEventListener('click', function() {
+            window.open('https://calendar.google.com', '_blank');
+        });
+    </script>
+</body>
+</html>
