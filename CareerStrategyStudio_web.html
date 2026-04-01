@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Consulting</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        h1, h2, h3 { color: #333; }
+        .container { width: 80%; margin: auto; }
+        .section { margin: 20px 0; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        .pricing, .courses { display: flex; justify-content: space-around; } 
+        .course { padding: 10px; border: 1px solid #ddd; margin: 10px; border-radius: 4px; }
+        .booking { margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to Career Consulting Studio</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="section" id="services">
+            <h2>Our Services</h2>
+            <p>We provide personalized career strategies tailored to your needs.</p>
+        </div>
+        <div class="section pricing" id="pricing">
+            <h2>Pricing by Market</h2>
+            <div>$100 - Basic Consultation</div>
+            <div>$200 - Advanced Consultation</div>
+        </div>
+        <div class="section courses" id="courses">
+            <h2>Available Courses</h2>
+            <div class="course">
+                <h3>Career Development 101</h3>
+                <p>A foundation course for career growth.</p>
+            </div>
+            <div class="course">
+                <h3>Interview Skills Workshop</h3>
+                <p>Learn how to succeed in interviews.</p>
+            </div>
+        </div>
+        <div class="section booking" id="booking">
+            <h2>Book a Consultation</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="date" required>
+                <input type="submit" value="Book Now">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
