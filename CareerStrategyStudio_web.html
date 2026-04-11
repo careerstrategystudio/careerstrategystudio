@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         .hero-bg {
-            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://picsum.photos/id/1015/2000/1200');
+            background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('https://picsum.photos/id/1015/2000/1200');
             background-size: cover;
             background-position: center;
         }
@@ -17,14 +17,14 @@
 <body class="bg-zinc-950 text-white">
 
     <!-- NAV -->
-    <nav class="bg-black/90 backdrop-blur-md sticky top-0 z-50 border-b border-white/10">
+    <nav class="bg-black/95 backdrop-blur-md sticky top-0 z-50 border-b border-white/10">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <div class="text-2xl font-bold tracking-tight">Career Strategy</div>
+            
             <div class="flex items-center gap-8">
-                <a href="#servicios" class="hover:text-blue-400 transition">Servicios</a>
                 <a href="#precios" class="hover:text-blue-400 transition">Precios</a>
-                <button onclick="toggleCart()" class="relative flex items-center gap-2 hover:text-blue-400 transition">
-                    <i class="fas fa-shopping-cart text-xl"></i>
+                <button onclick="toggleCart()" class="relative flex items-center gap-2 text-lg hover:text-blue-400 transition">
+                    <i class="fas fa-shopping-cart"></i>
                     <span id="cart-count" class="absolute -top-1 -right-1 bg-pink-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">0</span>
                 </button>
             </div>
@@ -50,56 +50,40 @@
     <section id="precios" class="py-20 bg-zinc-900">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="text-4xl font-bold text-center mb-4">Elige tu plan</h2>
-            <p class="text-center text-gray-400 mb-12">Selecciona el plan que mejor se adapte a ti</p>
+            <p class="text-center text-gray-400 mb-12">Selecciona el servicio que mejor se adapte a ti</p>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Starter -->
+
+                <!-- Sesión Puntual -->
                 <div class="bg-zinc-800 rounded-3xl p-8 border border-zinc-700">
-                    <h3 class="text-2xl font-semibold mb-2">Starter</h3>
-                    <p class="text-gray-400 mb-6">Para comenzar</p>
-                    <div class="text-5xl font-bold mb-8">€97</div>
-                    <ul class="space-y-4 mb-10 text-sm">
-                        <li>✓ Revisión de CV</li>
-                        <li>✓ 1 sesión de estrategia</li>
-                        <li>✓ Plantillas básicas</li>
-                    </ul>
-                    <button onclick="addToCart('Starter', 97)" 
-                            class="w-full py-4 bg-zinc-700 hover:bg-zinc-600 rounded-2xl font-medium">
+                    <h3 class="text-2xl font-semibold mb-2">Entrada - Sesión puntual</h3>
+                    <p class="text-3xl font-bold text-blue-400 mb-6">€75</p>
+                    <p class="text-sm text-gray-400 mb-8">Sesión única de 50 minutos</p>
+                    <button onclick="addToCart('Sesión Puntual', 75)" 
+                            class="w-full py-4 bg-blue-600 hover:bg-blue-700 rounded-2xl font-semibold">
                         Agregar al carrito
                     </button>
                 </div>
 
-                <!-- Pro -->
+                <!-- Programa Estrategia -->
                 <div class="bg-gradient-to-b from-blue-600 to-blue-700 rounded-3xl p-8 relative scale-105 shadow-2xl">
                     <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-400 text-black text-xs font-bold px-6 py-1 rounded-full">MÁS POPULAR</div>
-                    <h3 class="text-2xl font-semibold mb-2">Pro</h3>
-                    <p class="text-blue-200 mb-6">El más recomendado</p>
-                    <div class="text-5xl font-bold mb-8">€297</div>
-                    <ul class="space-y-4 mb-10 text-white text-sm">
-                        <li>✓ Optimización CV + LinkedIn</li>
-                        <li>✓ 3 sesiones 1:1</li>
-                        <li>✓ Carta de motivación</li>
-                        <li>✓ Seguimiento 30 días</li>
-                    </ul>
-                    <button onclick="addToCart('Pro', 297)" 
+                    <h3 class="text-2xl font-semibold mb-2">Programa Estrategia</h3>
+                    <p class="text-3xl font-bold mb-6">€390</p>
+                    <p class="text-sm text-blue-100 mb-8">Programa completo (3 sesiones)</p>
+                    <button onclick="addToCart('Programa Estrategia', 390)" 
                             class="w-full py-4 bg-white text-black rounded-2xl font-semibold hover:bg-gray-100">
                         Agregar al carrito
                     </button>
                 </div>
 
-                <!-- Premium -->
+                <!-- Acompañamiento Total -->
                 <div class="bg-zinc-800 rounded-3xl p-8 border border-zinc-700">
-                    <h3 class="text-2xl font-semibold mb-2">Premium</h3>
-                    <p class="text-gray-400 mb-6">Transformación completa</p>
-                    <div class="text-5xl font-bold mb-8">€597</div>
-                    <ul class="space-y-4 mb-10 text-sm">
-                        <li>✓ Todo del plan Pro</li>
-                        <li>✓ 6 sesiones 1:1</li>
-                        <li>✓ Preparación entrevistas</li>
-                        <li>✓ Soporte 60 días</li>
-                    </ul>
-                    <button onclick="addToCart('Premium', 597)" 
-                            class="w-full py-4 bg-zinc-700 hover:bg-zinc-600 rounded-2xl font-medium">
+                    <h3 class="text-2xl font-semibold mb-2">Acompañamiento total</h3>
+                    <p class="text-3xl font-bold text-blue-400 mb-6">€500 - €1.000</p>
+                    <p class="text-sm text-gray-400 mb-8">Programa personalizado completo</p>
+                    <button onclick="addToCart('Acompañamiento Total', 750)" 
+                            class="w-full py-4 bg-blue-600 hover:bg-blue-700 rounded-2xl font-semibold">
                         Agregar al carrito
                     </button>
                 </div>
@@ -115,7 +99,7 @@
         </div>
         
         <div id="cart-items" class="p-6 space-y-6 min-h-[400px]">
-            <!-- Items se agregan con JS -->
+            <!-- Items agregados con JS -->
         </div>
 
         <div class="p-6 border-t border-zinc-700">
@@ -139,7 +123,7 @@
         function addToCart(name, price) {
             cart.push({ name, price });
             updateCartCount();
-            toggleCart(); // abre el carrito automáticamente
+            toggleCart(); // abre el carrito
         }
 
         function updateCartCount() {
@@ -193,26 +177,15 @@
             if (cart.length === 0) return;
 
             let total = cart.reduce((sum, item) => sum + item.price, 0);
-            let message = `Hola, he comprado los siguientes servicios:\n\n`;
+            let message = `Hola, quiero comprar los siguientes servicios:\n\n`;
 
             cart.forEach(item => {
                 message += `- ${item.name} → €${item.price}\n`;
             });
-            message += `\nTotal: €${total}\n\nQuiero agendar mi sesión.`;
+            message += `\nTotal: €${total}\n\nQuiero agendar mi sesión. ¿Cuándo tienes disponibilidad?`;
 
-            // Abre WhatsApp con el mensaje
             const whatsappNumber = "353876071392"; // Cambia si es necesario
             const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
             window.open(url, '_blank');
 
-            // Limpia el carrito después de enviar
-            setTimeout(() => {
-                cart = [];
-                updateCartCount();
-                toggleCart();
-            }, 1500);
-        }
-    </script>
-
-</body>
-</html>
+            // Limpiar carrito después
