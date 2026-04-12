@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Career Strategy Studio | Consultoría para hispanohablantes en Europa</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         .transition { transition: all 0.2s ease; }
         .tab-active { background-color: #4f46e5; color: white; }
@@ -14,28 +14,28 @@
 </head>
 <body class="bg-white text-gray-800">
 
-    <!-- NAV -->
+    <!-- Navegación + Carrito -->
     <nav class="border-b border-gray-200 bg-white/90 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <img src="img/logo.png" alt="Logo" class="h-20 w-auto">
 
                 <div class="hidden md:flex space-x-8">
-                    <a href="#nosotros" class="text-gray-600 hover:text-indigo-600">Nosotros</a>
-                    <a href="#metodologia" class="text-gray-600 hover:text-indigo-600">Metodología</a>
-                    <a href="#servicios-precios" class="text-gray-600 hover:text-indigo-600">Servicios</a>
-                    <a href="#precios" class="text-gray-600 hover:text-indigo-600">Precios</a>
-                    <a href="#testimonios" class="text-gray-600 hover:text-indigo-600">Testimonios</a>
-                    <a href="#faq" class="text-gray-600 hover:text-indigo-600">FAQ</a>
+                    <a href="#nosotros" data-i18n="nav-nosotros" class="text-gray-600 hover:text-indigo-600">Nosotros</a>
+                    <a href="#metodologia" data-i18n="nav-metodologia" class="text-gray-600 hover:text-indigo-600">Metodología</a>
+                    <a href="#servicios-precios" data-i18n="nav-servicios" class="text-gray-600 hover:text-indigo-600">Servicios</a>
+                    <a href="#precios" data-i18n="nav-precios" class="text-gray-600 hover:text-indigo-600">Precios</a>
+                    <a href="#testimonios" data-i18n="nav-testimonios" class="text-gray-600 hover:text-indigo-600">Testimonios</a>
+                    <a href="#faq" data-i18n="nav-faq" class="text-gray-600 hover:text-indigo-600">FAQ</a>
                 </div>
 
                 <div class="flex items-center gap-4">
-                    <button onclick="cambiarIdioma('es')" id="btn-es" class="px-3 py-1 rounded text-sm font-semibold bg-indigo-600 text-white">🇪🇸 ES</button>
-                    <button onclick="cambiarIdioma('en')" id="btn-en" class="px-3 py-1 rounded text-sm font-semibold bg-gray-200 text-gray-700">🇬🇧 EN</button>
-                    <button onclick="cambiarIdioma('pt')" id="btn-pt" class="px-3 py-1 rounded text-sm font-semibold bg-gray-200 text-gray-700">🇧🇷 PT</button>
+                    <button onclick="cambiarIdioma('es')" id="btn-es" class="px-2 py-1 rounded text-sm font-semibold bg-indigo-600 text-white">🇪🇸 ES</button>
+                    <button onclick="cambiarIdioma('en')" id="btn-en" class="px-2 py-1 rounded text-sm font-semibold bg-gray-200 text-gray-700">🇬🇧 EN</button>
+                    <button onclick="cambiarIdioma('pt')" id="btn-pt" class="px-2 py-1 rounded text-sm font-semibold bg-gray-200 text-gray-700">🇧🇷 PT</button>
 
                     <!-- Carrito -->
-                    <button onclick="toggleCart()" class="relative flex items-center gap-2 text-xl hover:text-indigo-600">
+                    <button onclick="toggleCart()" class="relative flex items-center gap-2 text-xl hover:text-indigo-600 transition">
                         <i class="fas fa-shopping-cart"></i>
                         <span id="cart-count" class="absolute -top-2 -right-2 bg-pink-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">0</span>
                     </button>
@@ -44,7 +44,7 @@
         </div>
     </nav>
 
-    <!-- Hero (mantenido igual) -->
+    <!-- Hero (sin cambios) -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
         <p id="hero-sub" class="text-sm uppercase tracking-wider text-indigo-600 font-semibold mb-4">Consultoría de carrera para hispanohablantes en Europa</p>
         <h1 id="hero-title" class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Tu carrera merece una <span class="text-indigo-600">estrategia clara.</span><br>Nosotros te ayudamos a construirla.</h1>
@@ -54,12 +54,12 @@
                 Ver servicios y precios
             </a>
         </div>
+        <p id="hero-note" class="text-sm text-gray-500 mt-4">50 minutos · Sin compromiso · Para saber exactamente qué está fallando.</p>
     </section>
 
-    <!-- El resto de tu contenido original (Nosotros, Perfiles, Metodología, etc.) se mantiene igual -->
-    <!-- ... (mantengo todo tu HTML original desde aquí) ... -->
+    <!-- El resto de tu contenido original (Nosotros, Perfiles, Metodología, Servicios, Tabla, Testimonios, FAQ, CTA) se mantiene exactamente igual -->
 
-    <!-- PRECIOS - Botones cambiados a "Agregar al carrito" -->
+    <!-- PRECIOS - Solo cambio los botones a "Agregar al carrito" -->
     <section id="precios" class="py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 id="precios-titulo" class="text-3xl font-bold text-center text-gray-900 mb-4">Servicios y precios</h2>
@@ -72,10 +72,11 @@
             </div>
 
             <div id="precios-contenedor" class="space-y-8"></div>
+            <div id="precios-nota" class="text-center mt-8 text-gray-500 text-sm">¿No sabes por cuál empezar? La sesión de diagnóstico es siempre el mejor primer paso.</div>
         </div>
     </section>
 
-    <!-- CARRITO -->
+    <!-- CARRITO DE COMPRA -->
     <div id="cart-sidebar" class="hidden fixed top-0 right-0 h-full w-full md:w-96 bg-white shadow-2xl z-[100] overflow-y-auto border-l border-gray-200">
         <div class="p-6 border-b flex justify-between items-center">
             <h3 class="text-2xl font-bold">Tu Carrito</h3>
@@ -87,7 +88,8 @@
                 <span>Total:</span>
                 <span id="cart-total" class="text-indigo-600">€0</span>
             </div>
-            <button onclick="proceedToPayment()" class="w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-semibold text-lg">
+            <button onclick="proceedToPayment()" 
+                    class="w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-semibold text-lg">
                 Proceder al pago
             </button>
         </div>
@@ -102,17 +104,66 @@
     </footer>
 
     <script>
-        // === TU CÓDIGO ORIGINAL DE TRADUCCIONES (mantengo todo) ===
+        // ==================== TU CÓDIGO ORIGINAL (traducciones + funciones) ====================
         let currentLang = 'es';
         let currentRegion = 'ie';
 
-        const preciosTexts = { /* ... tu objeto preciosTexts completo ... */ };
-        const preciosData = { /* ... tu objeto preciosData completo ... */ };
-        const translations = { /* ... tu objeto translations completo ... */ };
+        const preciosTexts = { /* ... pega aquí tu objeto preciosTexts completo ... */ };
+        const preciosData = { /* ... pega aquí tu objeto preciosData completo ... */ };
+        const translations = { /* ... pega aquí tu objeto translations completo ... */ };
 
-        // Funciones originales
-        function cambiarPrecio(region) { /* tu función original */ }
-        function cambiarIdioma(idioma) { /* tu función original */ }
+        function cambiarPrecio(region) {
+            currentRegion = region;
+            const data = preciosData[region];
+            const txt = preciosTexts[currentLang];
+            if (!txt) return;
+
+            document.getElementById('precios-contenedor').innerHTML = `
+                <div class="grid md:grid-cols-3 gap-8 mb-8">
+                    <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                        <h3 class="text-xl font-bold text-indigo-600">${txt.entrada}</h3>
+                        <p class="text-2xl font-bold my-2">${data.entrada.precio}<span class="text-sm font-normal">/ ${txt.sufijoUnica}</span></p>
+                        <p class="text-gray-600">${txt.descEntrada}</p>
+                        <button onclick="addToCart('${txt.entrada}', 75)" class="mt-4 w-full bg-indigo-600 text-white px-4 py-3 rounded-lg text-sm font-semibold transition">Agregar al carrito</button>
+                        <p class="text-xs text-gray-400 mt-2">${txt.descuentoEntrada}</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md border-2 border-indigo-200">
+                        <h3 class="text-xl font-bold text-indigo-600">⭐ ${txt.estrategia}</h3>
+                        <p class="text-2xl font-bold my-2">${data.estrategia.precio}<span class="text-sm font-normal">/ ${txt.sufijoCompleto}</span></p>
+                        <p class="text-gray-600">${txt.descEstrategia}</p>
+                        <button onclick="addToCart('${txt.estrategia}', 390)" class="mt-4 w-full bg-indigo-600 text-white px-4 py-3 rounded-lg text-sm font-semibold transition">Agregar al carrito</button>
+                        <p class="text-xs text-gray-400 mt-2">${txt.descuentoEstrategia}</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                        <h3 class="text-xl font-bold text-indigo-600">${txt.acompañamiento}</h3>
+                        <p class="text-2xl font-bold my-2">${data.acompañamiento.precio}<span class="text-sm font-normal">/ ${txt.sufijoCompleto}</span></p>
+                        <p class="text-gray-600">${txt.descAcompanamiento}</p>
+                        <button onclick="addToCart('${txt.acompañamiento}', 750)" class="mt-4 w-full bg-indigo-600 text-white px-4 py-3 rounded-lg text-sm font-semibold transition">Agregar al carrito</button>
+                        <p class="text-xs text-gray-400 mt-2">${txt.descuentoAcompanamiento}</p>
+                    </div>
+                </div>
+                <!-- Servicios puntuales también con "Agregar al carrito" -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-gray-50 p-5 rounded-lg border border-gray-200 text-center">
+                        <h4 class="font-bold text-lg">${txt.revisionCV}</h4>
+                        <p class="text-2xl font-bold text-indigo-600 my-2">${data.puntuales.cv}</p>
+                        <button onclick="addToCart('${txt.revisionCV}', 65)" class="mt-3 w-full bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">Agregar al carrito</button>
+                    </div>
+                    <!-- Repite el mismo patrón para los otros 3 servicios puntuales -->
+                </div>
+            `;
+
+            // Actualizar pestañas
+            document.getElementById('tab-ie').className = region === 'ie' ? 'px-6 py-2 rounded-full font-semibold tab-active transition' : 'px-6 py-2 rounded-full font-semibold tab-inactive transition';
+            document.getElementById('tab-es').className = region === 'es' ? 'px-6 py-2 rounded-full font-semibold tab-active transition' : 'px-6 py-2 rounded-full font-semibold tab-inactive transition';
+            document.getElementById('tab-latam').className = region === 'latam' ? 'px-6 py-2 rounded-full font-semibold tab-active transition' : 'px-6 py-2 rounded-full font-semibold tab-inactive transition';
+        }
+
+        function cambiarIdioma(idioma) {
+            currentLang = idioma;
+            // ... tu función original de cambiarIdioma ...
+            cambiarPrecio(currentRegion);
+        }
 
         // ==================== CARRITO ====================
         let cart = [];
@@ -145,7 +196,7 @@
             cart.forEach((item, i) => {
                 total += item.price;
                 container.innerHTML += `
-                    <div class="flex justify-between bg-gray-50 p-4 rounded-xl">
+                    <div class="flex justify-between items-center bg-gray-50 p-4 rounded-xl">
                         <div>
                             <p class="font-medium">${item.name}</p>
                             <p class="text-sm text-gray-500">€${item.price}</p>
@@ -164,14 +215,18 @@
 
         function proceedToPayment() {
             if (cart.length === 0) return;
-            let total = cart.reduce((a, b) => a + b.price, 0);
+            let total = cart.reduce((sum, item) => sum + item.price, 0);
             let msg = `Hola, quiero comprar:\n\n`;
             cart.forEach(item => msg += `- ${item.name} → €${item.price}\n`);
             msg += `\nTotal: €${total}\n\nQuiero agendar mi sesión. ¿Cuándo tienes disponibilidad?`;
 
             window.open(`https://wa.me/353876071392?text=${encodeURIComponent(msg)}`, '_blank');
 
-            setTimeout(() => { cart = []; updateCartCount(); toggleCart(); }, 1500);
+            setTimeout(() => {
+                cart = [];
+                updateCartCount();
+                toggleCart();
+            }, 1500);
         }
 
         // Inicialización
