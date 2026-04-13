@@ -13,11 +13,11 @@
 <body class="bg-white text-gray-800">
 
     <!-- NAV -->
-    <nav class="border-b border-gray-200 bg-white/90 backdrop-blur-md sticky top-0 z-50">
+    <nav class="border-b border-gray-200 bg-white sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <img src="img/logo.png" alt="Logo" class="h-16 w-auto">
+            <img src="img/logo.png" alt="Logo" class="h-16">
 
-            <div class="hidden md:flex space-x-8 text-lg">
+            <div class="hidden md:flex gap-8 text-lg">
                 <a href="#nosotros" class="hover:text-indigo-600">Nosotros</a>
                 <a href="#metodologia" class="hover:text-indigo-600">Metodología</a>
                 <a href="#servicios-precios" class="hover:text-indigo-600">Servicios</a>
@@ -44,20 +44,23 @@
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-4xl font-bold text-center mb-12">Servicios y Precios</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow">
-                    <h3 class="text-2xl font-bold mb-4">Sesión Puntual</h3>
+                <div class="bg-white p-8 rounded-2xl shadow text-center">
+                    <h3 class="text-2xl font-bold mb-2">Sesión Puntual</h3>
                     <p class="text-3xl font-bold text-indigo-600 mb-6">€75</p>
-                    <button onclick="addToCart('Sesión Puntual', 75)" class="w-full bg-indigo-600 text-white py-4 rounded-xl">Agregar al carrito</button>
+                    <button onclick="addToCart('Sesión Puntual', 75)" 
+                            class="w-full bg-indigo-600 text-white py-4 rounded-xl font-medium">Agregar al carrito</button>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow border-2 border-indigo-600">
-                    <h3 class="text-2xl font-bold mb-4">Programa Estrategia</h3>
+                <div class="bg-white p-8 rounded-2xl shadow border-2 border-indigo-600 text-center">
+                    <h3 class="text-2xl font-bold mb-2">Programa Estrategia</h3>
                     <p class="text-3xl font-bold text-indigo-600 mb-6">€390</p>
-                    <button onclick="addToCart('Programa Estrategia', 390)" class="w-full bg-indigo-600 text-white py-4 rounded-xl">Agregar al carrito</button>
+                    <button onclick="addToCart('Programa Estrategia', 390)" 
+                            class="w-full bg-indigo-600 text-white py-4 rounded-xl font-medium">Agregar al carrito</button>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow">
-                    <h3 class="text-2xl font-bold mb-4">Acompañamiento Total</h3>
+                <div class="bg-white p-8 rounded-2xl shadow text-center">
+                    <h3 class="text-2xl font-bold mb-2">Acompañamiento Total</h3>
                     <p class="text-3xl font-bold text-indigo-600 mb-6">€750</p>
-                    <button onclick="addToCart('Acompañamiento Total', 750)" class="w-full bg-indigo-600 text-white py-4 rounded-xl">Agregar al carrito</button>
+                    <button onclick="addToCart('Acompañamiento Total', 750)" 
+                            class="w-full bg-indigo-600 text-white py-4 rounded-xl font-medium">Agregar al carrito</button>
                 </div>
             </div>
         </div>
@@ -65,11 +68,11 @@
 
     <!-- CARRITO -->
     <div id="cart-sidebar" class="hidden fixed top-0 right-0 h-full w-full md:w-96 bg-white shadow-2xl z-50 overflow-auto">
-        <div class="p-6 border-b">
+        <div class="p-6 border-b flex justify-between items-center">
             <h3 class="text-2xl font-bold">Tu Carrito</h3>
-            <button onclick="toggleCart()" class="float-right text-3xl">×</button>
+            <button onclick="toggleCart()" class="text-3xl text-gray-400">×</button>
         </div>
-        <div id="cart-items" class="p-6"></div>
+        <div id="cart-items" class="p-6 space-y-4"></div>
         <div class="p-6 border-t">
             <div class="flex justify-between text-xl mb-6">
                 <span>Total</span>
@@ -81,7 +84,7 @@
         </div>
     </div>
 
-    <div id="cart-overlay" onclick="toggleCart()" class="hidden fixed inset-0 bg-black/50 z-40"></div>
+    <div id="cart-overlay" onclick="toggleCart()" class="hidden fixed inset-0 bg-black/60 z-40"></div>
 
     <script>
         let cart = [];
@@ -112,7 +115,7 @@
             cart.forEach((item, i) => {
                 total += item.price;
                 container.innerHTML += `
-                    <div class="flex justify-between items-center bg-gray-100 p-4 rounded-xl mb-4">
+                    <div class="flex justify-between bg-gray-100 p-4 rounded-xl">
                         <div>
                             <p class="font-medium">${item.name}</p>
                             <p class="text-sm text-gray-500">€${item.price}</p>
@@ -131,7 +134,7 @@
 
         function proceedToPayment() {
             if (cart.length === 0) return;
-            let total = cart.reduce((a, b) => a + b.price, 0);
+            let total = cart.reduce((sum, item) => sum + item.price, 0);
             let msg = `Hola, quiero comprar:\n\n`;
             cart.forEach(item => msg += `- ${item.name} → €${item.price}\n`);
             msg += `\nTotal: €${total}\n\nQuiero agendar mi sesión. ¿Cuándo tienes disponibilidad?`;
