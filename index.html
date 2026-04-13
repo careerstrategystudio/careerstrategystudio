@@ -22,12 +22,12 @@
                 <img src="img/logo.png" alt="Logo" class="h-20 w-auto">
 
                 <div class="hidden md:flex space-x-8">
-                    <a href="#nosotros" data-i18n="nav-nosotros" class="text-gray-600 hover:text-indigo-600">Nosotros</a>
-                    <a href="#metodologia" data-i18n="nav-metodologia" class="text-gray-600 hover:text-indigo-600">Metodología</a>
-                    <a href="#servicios-precios" data-i18n="nav-servicios" class="text-gray-600 hover:text-indigo-600">Servicios</a>
-                    <a href="#precios" data-i18n="nav-precios" class="text-gray-600 hover:text-indigo-600">Precios</a>
-                    <a href="#testimonios" data-i18n="nav-testimonios" class="text-gray-600 hover:text-indigo-600">Testimonios</a>
-                    <a href="#faq" data-i18n="nav-faq" class="text-gray-600 hover:text-indigo-600">FAQ</a>
+                    <a href="#nosotros" class="text-gray-600 hover:text-indigo-600">Nosotros</a>
+                    <a href="#metodologia" class="text-gray-600 hover:text-indigo-600">Metodología</a>
+                    <a href="#servicios-precios" class="text-gray-600 hover:text-indigo-600">Servicios</a>
+                    <a href="#precios" class="text-gray-600 hover:text-indigo-600">Precios</a>
+                    <a href="#testimonios" class="text-gray-600 hover:text-indigo-600">Testimonios</a>
+                    <a href="#faq" class="text-gray-600 hover:text-indigo-600">FAQ</a>
                 </div>
 
                 <div class="flex items-center gap-4">
@@ -35,7 +35,6 @@
                     <button onclick="cambiarIdioma('en')" id="btn-en" class="px-2 py-1 rounded text-sm font-semibold bg-gray-200 text-gray-700">🇬🇧 EN</button>
                     <button onclick="cambiarIdioma('pt')" id="btn-pt" class="px-2 py-1 rounded text-sm font-semibold bg-gray-200 text-gray-700">🇧🇷 PT</button>
 
-                    <!-- Carrito -->
                     <button onclick="toggleCart()" class="relative flex items-center gap-2 text-xl hover:text-indigo-600 transition">
                         <i class="fas fa-shopping-cart"></i>
                         <span id="cart-count" class="absolute -top-2 -right-2 bg-pink-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">0</span>
@@ -56,9 +55,9 @@
         <p id="hero-note" class="text-sm text-gray-500 mt-4">50 minutos · Sin compromiso · Para saber exactamente qué está fallando.</p>
     </section>
 
-    <!-- Quiénes somos, Perfiles, Metodología, Servicios, Tabla, Testimonios, FAQ, CTA se mantienen igual que tu original -->
+    <!-- Resto de tu contenido original (Nosotros, Perfiles, Metodología, Servicios, Tabla, Testimonios, FAQ, CTA) -->
 
-    <!-- PRECIOS - Botones cambiados a "Agregar al carrito" -->
+    <!-- PRECIOS -->
     <section id="precios" class="py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 id="precios-titulo" class="text-3xl font-bold text-center text-gray-900 mb-4">Servicios y precios</h2>
@@ -102,7 +101,7 @@
     </footer>
 
     <script>
-        // === TU CÓDIGO ORIGINAL (traducciones y funciones) ===
+        // === TU CÓDIGO ORIGINAL DE TRADUCCIONES Y FUNCIONES ===
         let currentLang = 'es';
         let currentRegion = 'ie';
 
@@ -132,7 +131,7 @@
                 descEstrategia: "3 sesiones 1:1, diagnóstico profundo, optimización CV y LinkedIn, definición objetivo, plan de búsqueda.",
                 descAcompanamiento: "Todo Estrategia + 2 sesiones/mes, revisión candidaturas, preparación entrevistas, canal mensajes, negociación salarial."
             },
-            // (en y pt se mantienen igual que en tu código original)
+            // Agrega aquí los objetos 'en' y 'pt' si los tienes completos
         };
 
         const preciosData = {
@@ -141,13 +140,11 @@
             latam: { entrada: { precio: "€35" }, estrategia: { precio: "€199" }, acompañamiento: { precio: "€199–€400" }, puntuales: { cv: "€35", linkedin: "€90", entrevista: "€45", negociacion: "€50" } }
         };
 
-        const translations = { /* ... tu objeto translations completo ... */ };
-
+        // Función cambiarPrecio
         function cambiarPrecio(region) {
             currentRegion = region;
             const data = preciosData[region];
             const txt = preciosTexts[currentLang] || preciosTexts.es;
-            if (!txt) return;
 
             document.getElementById('precios-contenedor').innerHTML = `
                 <div class="grid md:grid-cols-3 gap-8 mb-8">
@@ -191,14 +188,7 @@
                 if (t[key]) el.innerText = t[key];
             });
 
-            // Actualizar elementos con id
-            const elements = ["hero-sub", "hero-title", "hero-desc", "hero-btn", "hero-btn2", "hero-note", "quienes-titulo", "quienes-text1", "quienes-text2", "quienes-cita", "galizzi-desc", "ayala-desc", "metodologia-titulo", "metodologia-sub", "paso1-tit", "paso1-desc", "paso2-tit", "paso2-desc", "paso3-tit", "paso3-desc", "paso4-tit", "paso4-desc", "paso5-tit", "paso5-desc", "paso6-tit", "paso6-desc", "quehacemos-titulo", "quehacemos-sub", "serv1-tit", "serv1-desc", "serv2-tit", "serv2-desc", "serv3-tit", "serv3-desc", "serv4-tit", "serv4-desc", "serv5-tit", "serv5-desc", "cambia-titulo", "cambia-sub", "antes-th", "despues-th", "antes1", "despues1", "antes2", "despues2", "antes3", "despues3", "antes4", "despues4", "antes5", "despues5", "cambia-nota", "precios-titulo", "precios-sub", "precios-nota", "testimonios-titulo", "test1-text", "test1-role", "test2-text", "test2-role", "test3-text", "test3-role", "faq-titulo", "faq1-q", "faq1-a", "faq2-q", "faq2-a", "faq3-q", "faq3-a", "faq4-q", "faq4-a", "cta-titulo", "cta-desc", "cta-btn", "cta-note", "footer-copy", "footer-contact"];
-
-            elements.forEach(id => {
-                const el = document.getElementById(id);
-                if (el && t[id]) el.innerHTML = t[id];
-            });
-
+            // Actualizar otros elementos si es necesario
             cambiarPrecio(currentRegion);
         }
 
