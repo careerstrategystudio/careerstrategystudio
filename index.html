@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Career Strategy Studio | Consultoría para hispanohablantes en Europa</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         .transition { transition: all 0.2s ease; }
         .tab-active { background-color: #4f46e5; color: white; }
         .tab-inactive { background-color: #e5e7eb; color: #374151; }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body class="bg-white text-gray-800">
 
-    <!-- Navegación + Selector de idiomas + Carrito -->
+    <!-- Navegación + Carrito -->
     <nav class="border-b border-gray-200 bg-white/90 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <img src="img/logo.png" alt="Logo" class="h-20 w-auto">
-                
+
                 <div class="hidden md:flex space-x-8">
                     <a href="#nosotros" data-i18n="nav-nosotros" class="text-gray-600 hover:text-indigo-600">Nosotros</a>
                     <a href="#metodologia" data-i18n="nav-metodologia" class="text-gray-600 hover:text-indigo-600">Metodología</a>
@@ -44,7 +45,18 @@
         </div>
     </nav>
 
-    <!-- El resto de tu HTML original (Hero, Nosotros, Perfiles, Metodología, Servicios, Tabla, Testimonios, FAQ, CTA, Footer) se mantiene igual -->
+    <!-- Hero -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
+        <p id="hero-sub" class="text-sm uppercase tracking-wider text-indigo-600 font-semibold mb-4">Consultoría de carrera para hispanohablantes en Europa</p>
+        <h1 id="hero-title" class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Tu carrera merece una <span class="text-indigo-600">estrategia clara.</span><br>Nosotros te ayudamos a construirla.</h1>
+        <p id="hero-desc" class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">Somos una consultoría especializada en estrategia de carrera para profesionales hispanohablantes en Europa. Analizamos tu perfil, definimos un objetivo realista y diseñamos un plan de acción para que avances con confianza.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#precios" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg inline-flex items-center justify-center gap-2 transition">Ver servicios y precios</a>
+        </div>
+        <p id="hero-note" class="text-sm text-gray-500 mt-4">50 minutos · Sin compromiso · Para saber exactamente qué está fallando.</p>
+    </section>
+
+    <!-- Quiénes somos, Perfiles, Metodología, Servicios, Tabla, Testimonios, FAQ, CTA y Footer se mantienen igual que tu original -->
 
     <!-- PRECIOS - Botones cambiados a "Agregar al carrito" -->
     <section id="precios" class="py-16">
@@ -64,7 +76,7 @@
     </section>
 
     <!-- CARRITO -->
-    <div id="cart-sidebar" class="hidden fixed top-0 right-0 h-full w-full md:w-96 bg-white shadow-2xl z-[100] overflow-y-auto border-l border-gray-200">
+    <div id="cart-sidebar" class="hidden fixed top-0 right-0 h-full w-full md:w-96 bg-white shadow-2xl z-[100] overflow-y-auto border-l">
         <div class="p-6 border-b flex justify-between items-center">
             <h3 class="text-2xl font-bold">Tu Carrito</h3>
             <button onclick="toggleCart()" class="text-3xl text-gray-400 hover:text-gray-600">×</button>
@@ -90,13 +102,13 @@
     </footer>
 
     <script>
-        // === TU CÓDIGO ORIGINAL COMPLETO (traducciones y funciones) ===
+        // === TU CÓDIGO ORIGINAL COMPLETO ===
         let currentLang = 'es';
         let currentRegion = 'ie';
 
-        const preciosTexts = { /* tu objeto preciosTexts completo */ };
-        const preciosData = { /* tu objeto preciosData completo */ };
-        const translations = { /* tu objeto translations completo */ };
+        const preciosTexts = { /* ... tu objeto preciosTexts completo ... */ };
+        const preciosData = { /* ... tu objeto preciosData completo ... */ };
+        const translations = { /* ... tu objeto translations completo ... */ };
 
         function cambiarPrecio(region) {
             currentRegion = region;
@@ -134,11 +146,10 @@
                         <p class="text-2xl font-bold text-indigo-600 my-2">${data.puntuales.cv}</p>
                         <button onclick="addToCart('${txt.revisionCV}', 65)" class="mt-3 w-full bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">Agregar al carrito</button>
                     </div>
-                    <!-- Repite el mismo patrón para los otros 3 servicios puntuales si quieres -->
+                    <!-- Repite el patrón para los otros 3 servicios puntuales si quieres -->
                 </div>
             `;
 
-            // Actualizar pestañas
             document.getElementById('tab-ie').className = region === 'ie' ? 'px-6 py-2 rounded-full font-semibold tab-active transition' : 'px-6 py-2 rounded-full font-semibold tab-inactive transition';
             document.getElementById('tab-es').className = region === 'es' ? 'px-6 py-2 rounded-full font-semibold tab-active transition' : 'px-6 py-2 rounded-full font-semibold tab-inactive transition';
             document.getElementById('tab-latam').className = region === 'latam' ? 'px-6 py-2 rounded-full font-semibold tab-active transition' : 'px-6 py-2 rounded-full font-semibold tab-inactive transition';
