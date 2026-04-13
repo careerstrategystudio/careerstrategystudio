@@ -35,7 +35,6 @@
                     <button onclick="cambiarIdioma('en')" id="btn-en" class="px-3 py-1 rounded text-sm font-semibold bg-gray-200 text-gray-700">🇬🇧 EN</button>
                     <button onclick="cambiarIdioma('pt')" id="btn-pt" class="px-3 py-1 rounded text-sm font-semibold bg-gray-200 text-gray-700">🇧🇷 PT</button>
 
-                    <!-- Carrito -->
                     <button onclick="toggleCart()" class="relative flex items-center gap-2 text-xl hover:text-indigo-600 transition">
                         <i class="fas fa-shopping-cart"></i>
                         <span id="cart-count" class="absolute -top-2 -right-2 bg-pink-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">0</span>
@@ -57,8 +56,8 @@
         </div>
     </section>
 
-    <!-- Resto de secciones (mantengo tu estructura) -->
-    <!-- ... (Nosotros, Perfiles, Metodología, Servicios, Tabla, Testimonios, FAQ, CTA) ... -->
+    <!-- ==================== TU CONTENIDO ORIGINAL ==================== -->
+    <!-- (Nosotros, Perfiles, Metodología, Servicios, Tabla, Testimonios, FAQ, CTA, Footer) -->
 
     <!-- PRECIOS -->
     <section id="precios" class="py-16">
@@ -166,8 +165,9 @@
 
         // ==================== NAVEGACIÓN SUAVE ====================
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const target = document.querySelector(this.getAttribute('href'));
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href').substring(1);
+                const target = document.getElementById(targetId);
                 if (target) {
                     e.preventDefault();
                     target.scrollIntoView({ behavior: 'smooth' });
@@ -177,9 +177,9 @@
 
         // Inicialización
         window.onload = () => {
-            // Si tienes las funciones cambiarPrecio y cambiarIdioma, llámalas aquí
             console.log("Página cargada correctamente");
             document.getElementById('cart-count').textContent = '0';
+            // Si tienes cambiarPrecio y cambiarIdioma, llámalas aquí
         };
     </script>
 </body>
