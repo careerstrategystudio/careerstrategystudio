@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Career Strategy Studio | Consultoría para hispanohablantes en Europa</title>
+    <title>Career Strategy Studio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
@@ -14,59 +14,65 @@
 
     <!-- NAV -->
     <nav class="border-b border-gray-200 bg-white/90 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <img src="img/logo.png" alt="Logo" class="h-20 w-auto">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <img src="img/logo.png" alt="Logo" class="h-16 w-auto">
 
-                <div class="hidden md:flex space-x-8">
-                    <a href="#nosotros" class="text-gray-600 hover:text-indigo-600">Nosotros</a>
-                    <a href="#metodologia" class="text-gray-600 hover:text-indigo-600">Metodología</a>
-                    <a href="#servicios-precios" class="text-gray-600 hover:text-indigo-600">Servicios</a>
-                    <a href="#precios" class="text-gray-600 hover:text-indigo-600">Precios</a>
-                    <a href="#testimonios" class="text-gray-600 hover:text-indigo-600">Testimonios</a>
-                    <a href="#faq" class="text-gray-600 hover:text-indigo-600">FAQ</a>
-                </div>
-
-                <div class="flex items-center gap-4">
-                    <button onclick="toggleCart()" class="relative flex items-center gap-2 text-xl hover:text-indigo-600">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span id="cart-count" class="absolute -top-2 -right-2 bg-pink-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">0</span>
-                    </button>
-                </div>
+            <div class="hidden md:flex space-x-8 text-lg">
+                <a href="#nosotros" class="hover:text-indigo-600">Nosotros</a>
+                <a href="#metodologia" class="hover:text-indigo-600">Metodología</a>
+                <a href="#servicios-precios" class="hover:text-indigo-600">Servicios</a>
+                <a href="#precios" class="hover:text-indigo-600">Precios</a>
+                <a href="#testimonios" class="hover:text-indigo-600">Testimonios</a>
+                <a href="#faq" class="hover:text-indigo-600">FAQ</a>
             </div>
+
+            <button onclick="toggleCart()" class="relative text-2xl hover:text-indigo-600">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count" class="absolute -top-1 -right-1 bg-pink-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+            </button>
         </div>
     </nav>
 
     <!-- Hero -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
-        <p class="text-sm uppercase tracking-wider text-indigo-600 font-semibold mb-4">Consultoría de carrera para hispanohablantes en Europa</p>
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Tu carrera merece una <span class="text-indigo-600">estrategia clara.</span><br>Nosotros te ayudamos a construirla.</h1>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">Somos una consultoría especializada en estrategia de carrera para profesionales hispanohablantes en Europa.</p>
-        <a href="#precios" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg inline-flex items-center justify-center gap-2">
-            Ver servicios y precios
-        </a>
+    <section class="max-w-7xl mx-auto px-6 py-20 text-center">
+        <h1 class="text-5xl font-bold mb-6">Tu carrera merece una estrategia clara</h1>
+        <a href="#precios" class="bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-semibold">Ver Precios</a>
     </section>
 
     <!-- PRECIOS -->
-    <section id="precios" class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-8">Servicios y precios</h2>
-            <div id="precios-contenedor" class="space-y-8">
-                <!-- Aquí se cargarán los planes con botones "Agregar al carrito" -->
+    <section id="precios" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Servicios y Precios</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow">
+                    <h3 class="text-2xl font-bold mb-4">Sesión Puntual</h3>
+                    <p class="text-3xl font-bold text-indigo-600 mb-6">€75</p>
+                    <button onclick="addToCart('Sesión Puntual', 75)" class="w-full bg-indigo-600 text-white py-4 rounded-xl">Agregar al carrito</button>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow border-2 border-indigo-600">
+                    <h3 class="text-2xl font-bold mb-4">Programa Estrategia</h3>
+                    <p class="text-3xl font-bold text-indigo-600 mb-6">€390</p>
+                    <button onclick="addToCart('Programa Estrategia', 390)" class="w-full bg-indigo-600 text-white py-4 rounded-xl">Agregar al carrito</button>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow">
+                    <h3 class="text-2xl font-bold mb-4">Acompañamiento Total</h3>
+                    <p class="text-3xl font-bold text-indigo-600 mb-6">€750</p>
+                    <button onclick="addToCart('Acompañamiento Total', 750)" class="w-full bg-indigo-600 text-white py-4 rounded-xl">Agregar al carrito</button>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- CARRITO -->
-    <div id="cart-sidebar" class="hidden fixed top-0 right-0 h-full w-full md:w-96 bg-white shadow-2xl z-[100] overflow-y-auto">
-        <div class="p-6 border-b flex justify-between">
+    <div id="cart-sidebar" class="hidden fixed top-0 right-0 h-full w-full md:w-96 bg-white shadow-2xl z-50 overflow-auto">
+        <div class="p-6 border-b">
             <h3 class="text-2xl font-bold">Tu Carrito</h3>
-            <button onclick="toggleCart()" class="text-3xl">×</button>
+            <button onclick="toggleCart()" class="float-right text-3xl">×</button>
         </div>
-        <div id="cart-items" class="p-6 space-y-6"></div>
+        <div id="cart-items" class="p-6"></div>
         <div class="p-6 border-t">
-            <div class="flex justify-between text-lg mb-4">
-                <span>Total:</span>
+            <div class="flex justify-between text-xl mb-6">
+                <span>Total</span>
                 <span id="cart-total" class="font-bold">€0</span>
             </div>
             <button onclick="proceedToPayment()" class="w-full bg-indigo-600 text-white py-4 rounded-xl font-semibold">
@@ -75,14 +81,9 @@
         </div>
     </div>
 
-    <div id="cart-overlay" onclick="toggleCart()" class="hidden fixed inset-0 bg-black/60 z-[99]"></div>
-
-    <footer class="bg-gray-900 text-white py-8 text-center">
-        <p>© 2026 Career Strategy Studio</p>
-    </footer>
+    <div id="cart-overlay" onclick="toggleCart()" class="hidden fixed inset-0 bg-black/50 z-40"></div>
 
     <script>
-        // CARRITO
         let cart = [];
 
         function addToCart(name, price) {
@@ -111,9 +112,9 @@
             cart.forEach((item, i) => {
                 total += item.price;
                 container.innerHTML += `
-                    <div class="flex justify-between bg-gray-50 p-4 rounded-xl">
+                    <div class="flex justify-between items-center bg-gray-100 p-4 rounded-xl mb-4">
                         <div>
-                            <p>${item.name}</p>
+                            <p class="font-medium">${item.name}</p>
                             <p class="text-sm text-gray-500">€${item.price}</p>
                         </div>
                         <button onclick="removeFromCart(${i})" class="text-red-500">Eliminar</button>
@@ -141,7 +142,7 @@
                 cart = [];
                 document.getElementById('cart-count').textContent = '0';
                 toggleCart();
-            }, 1000);
+            }, 1500);
         }
 
         // NAVEGACIÓN SUAVE
@@ -155,7 +156,6 @@
             });
         });
 
-        // Inicialización
         window.onload = () => {
             console.log("Página cargada correctamente");
             document.getElementById('cart-count').textContent = '0';
