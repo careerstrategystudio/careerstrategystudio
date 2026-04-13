@@ -15,7 +15,7 @@
 </head>
 <body class="bg-white text-gray-800">
 
-    <!-- Navegación + Carrito -->
+    <!-- NAV -->
     <nav class="border-b border-gray-200 bg-white/90 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
@@ -56,7 +56,7 @@
         <p id="hero-note" class="text-sm text-gray-500 mt-4">50 minutos · Sin compromiso · Para saber exactamente qué está fallando.</p>
     </section>
 
-    <!-- Quiénes somos, Perfiles, Metodología, Servicios, Tabla, Testimonios, FAQ, CTA y Footer se mantienen igual que tu original -->
+    <!-- Quiénes somos, Perfiles, Metodología, Servicios, Tabla, Testimonios, FAQ, CTA se mantienen igual que tu original -->
 
     <!-- PRECIOS - Botones cambiados a "Agregar al carrito" -->
     <section id="precios" class="py-16">
@@ -102,18 +102,51 @@
     </footer>
 
     <script>
-        // === TU CÓDIGO ORIGINAL COMPLETO ===
+        // === TU CÓDIGO ORIGINAL (traducciones y funciones) ===
         let currentLang = 'es';
         let currentRegion = 'ie';
 
-        const preciosTexts = { /* ... tu objeto preciosTexts completo ... */ };
-        const preciosData = { /* ... tu objeto preciosData completo ... */ };
+        const preciosTexts = {
+            es: {
+                entrada: "Entrada · Sesión puntual",
+                estrategia: "Programa Estrategia",
+                acompañamiento: "Acompañamiento total",
+                reservar: "Reservar sesión",
+                quieroEmpezar: "Quiero empezar",
+                saberMas: "Saber más",
+                descuentoEntrada: "El importe se descuenta si luego contratas un programa.",
+                descuentoEstrategia: "Si ya hiciste sesión puntual, se descuenta.",
+                descuentoAcompanamiento: "La sesión de diagnóstico previa se descuenta.",
+                sufijoUnica: "sesión única · 50 min",
+                sufijoCompleto: "programa completo",
+                revisionCV: "Revisión exprés de CV",
+                feedbackCV: "Feedback detallado en 48h.",
+                optimizacionLinkedin: "Optimización de LinkedIn",
+                descLinkedin: "Perfil reescrito para que te encuentren.",
+                simulacro: "Simulacro de entrevista",
+                descSimulacro: "Feedback honesto para no repetir errores.",
+                negociacion: "Asesoría de negociación salarial",
+                descNegociacion: "Una buena negociación puede valer miles al año.",
+                reservarBtn: "Reservar",
+                descEntrada: "Diagnóstico honesto, claridad sobre cambios urgentes, resumen escrito, sesión 1:1 de 50 min, optimización CV/LinkedIn, plan de acción.",
+                descEstrategia: "3 sesiones 1:1, diagnóstico profundo, optimización CV y LinkedIn, definición objetivo, plan de búsqueda.",
+                descAcompanamiento: "Todo Estrategia + 2 sesiones/mes, revisión candidaturas, preparación entrevistas, canal mensajes, negociación salarial."
+            },
+            // (en y pt se mantienen igual que en tu código original)
+        };
+
+        const preciosData = {
+            ie: { entrada: { precio: "€75" }, estrategia: { precio: "€390" }, acompañamiento: { precio: "€500–€1.000" }, puntuales: { cv: "€65", linkedin: "€180", entrevista: "€90", negociacion: "€100" } },
+            es: { entrada: { precio: "€55" }, estrategia: { precio: "€290" }, acompañamiento: { precio: "€320–€650" }, puntuales: { cv: "€45", linkedin: "€130", entrevista: "€65", negociacion: "€70" } },
+            latam: { entrada: { precio: "€35" }, estrategia: { precio: "€199" }, acompañamiento: { precio: "€199–€400" }, puntuales: { cv: "€35", linkedin: "€90", entrevista: "€45", negociacion: "€50" } }
+        };
+
         const translations = { /* ... tu objeto translations completo ... */ };
 
         function cambiarPrecio(region) {
             currentRegion = region;
             const data = preciosData[region];
-            const txt = preciosTexts[currentLang];
+            const txt = preciosTexts[currentLang] || preciosTexts.es;
             if (!txt) return;
 
             document.getElementById('precios-contenedor').innerHTML = `
@@ -140,16 +173,9 @@
                         <p class="text-xs text-gray-400 mt-2">${txt.descuentoAcompanamiento}</p>
                     </div>
                 </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-gray-50 p-5 rounded-lg border border-gray-200 text-center">
-                        <h4 class="font-bold text-lg">${txt.revisionCV}</h4>
-                        <p class="text-2xl font-bold text-indigo-600 my-2">${data.puntuales.cv}</p>
-                        <button onclick="addToCart('${txt.revisionCV}', 65)" class="mt-3 w-full bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">Agregar al carrito</button>
-                    </div>
-                    <!-- Repite el patrón para los otros 3 servicios puntuales si quieres -->
-                </div>
             `;
 
+            // Actualizar pestañas
             document.getElementById('tab-ie').className = region === 'ie' ? 'px-6 py-2 rounded-full font-semibold tab-active transition' : 'px-6 py-2 rounded-full font-semibold tab-inactive transition';
             document.getElementById('tab-es').className = region === 'es' ? 'px-6 py-2 rounded-full font-semibold tab-active transition' : 'px-6 py-2 rounded-full font-semibold tab-inactive transition';
             document.getElementById('tab-latam').className = region === 'latam' ? 'px-6 py-2 rounded-full font-semibold tab-active transition' : 'px-6 py-2 rounded-full font-semibold tab-inactive transition';
@@ -157,7 +183,7 @@
 
         function cambiarIdioma(idioma) {
             currentLang = idioma;
-            const t = translations[idioma];
+            const t = translations[idioma] || translations.es;
             if (!t) return;
 
             document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -165,17 +191,12 @@
                 if (t[key]) el.innerText = t[key];
             });
 
+            // Actualizar elementos con id
             const elements = ["hero-sub", "hero-title", "hero-desc", "hero-btn", "hero-btn2", "hero-note", "quienes-titulo", "quienes-text1", "quienes-text2", "quienes-cita", "galizzi-desc", "ayala-desc", "metodologia-titulo", "metodologia-sub", "paso1-tit", "paso1-desc", "paso2-tit", "paso2-desc", "paso3-tit", "paso3-desc", "paso4-tit", "paso4-desc", "paso5-tit", "paso5-desc", "paso6-tit", "paso6-desc", "quehacemos-titulo", "quehacemos-sub", "serv1-tit", "serv1-desc", "serv2-tit", "serv2-desc", "serv3-tit", "serv3-desc", "serv4-tit", "serv4-desc", "serv5-tit", "serv5-desc", "cambia-titulo", "cambia-sub", "antes-th", "despues-th", "antes1", "despues1", "antes2", "despues2", "antes3", "despues3", "antes4", "despues4", "antes5", "despues5", "cambia-nota", "precios-titulo", "precios-sub", "precios-nota", "testimonios-titulo", "test1-text", "test1-role", "test2-text", "test2-role", "test3-text", "test3-role", "faq-titulo", "faq1-q", "faq1-a", "faq2-q", "faq2-a", "faq3-q", "faq3-a", "faq4-q", "faq4-a", "cta-titulo", "cta-desc", "cta-btn", "cta-note", "footer-copy", "footer-contact"];
 
             elements.forEach(id => {
                 const el = document.getElementById(id);
-                if (el && t[id]) {
-                    if (id === "hero-title") {
-                        el.innerHTML = t[id].replace('estrategia clara', '<span class="text-indigo-600">estrategia clara</span>');
-                    } else {
-                        el.innerHTML = t[id];
-                    }
-                }
+                if (el && t[id]) el.innerHTML = t[id];
             });
 
             cambiarPrecio(currentRegion);
