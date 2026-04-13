@@ -56,9 +56,7 @@
         </div>
     </section>
 
-    <!-- ==================== TU CONTENIDO ORIGINAL ==================== -->
-    <!-- Aquí va todo tu HTML original desde "Quiénes somos" hasta el footer -->
-    <!-- (Nosotros, Perfiles, Metodología, Servicios, Tabla, Testimonios, FAQ, CTA) -->
+    <!-- Resto de tu contenido original (Nosotros, Perfiles, Metodología, etc.) -->
 
     <!-- PRECIOS -->
     <section id="precios" class="py-16">
@@ -102,7 +100,7 @@
     </footer>
 
     <script>
-        // ==================== CARRITO ====================
+        // CARRITO
         let cart = [];
 
         function addToCart(name, price) {
@@ -164,7 +162,7 @@
             }, 1500);
         }
 
-        // ==================== NAVEGACIÓN SUAVE ====================
+        // NAVEGACIÓN SUAVE
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const target = document.querySelector(this.getAttribute('href'));
@@ -175,11 +173,10 @@
             });
         });
 
-        // ==================== INICIALIZACIÓN ====================
+        // Inicialización
         window.onload = () => {
             console.log("Página cargada correctamente");
             document.getElementById('cart-count').textContent = '0';
-            // Si tienes las funciones cambiarPrecio y cambiarIdioma, puedes llamarlas aquí
         };
     </script>
 </body>
